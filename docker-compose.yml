@@ -1,0 +1,168 @@
+# 使用说明 V3.6.0
+# 1. 使用docker-compose  宿主机不需要配置host来发现
+# 2. 无需修改源码，根目录  docker-compose up 即可
+# 3. 静静等待服务启动
+
+version: '2'
+services:
+  byt-mysql:
+    build:
+      context: ./
+      dockerfile: ./db/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    container_name: byt-mysql
+    image: byt-mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./byt-mysql:/var/lib/mysql
+    command: --lower_case_table_names=1
+
+  byt-zookeeper:
+    image: zookeeper:3.4.13
+    restart: always
+
+  byt-xxl:
+    image: byt/xxl-job-admin:2.1.1
+    restart: always
+    environment:
+      PARAMS: "--spring.datasource.url=jdbc:mysql://byt-mysql:3306/byt_job?Unicode=true&characterEncoding=UTF-8 --spring.datasource.username=root --spring.datasource.password=root"
+    ports:
+      - 9080:8080
+
+  byt-redis:
+    image: redis:5.0.7
+    restart: always
+    container_name: byt-redis
+    ports:
+      - 6379:6379
+
+  byt-minio:
+    image: minio/minio
+    command: server /data
+    ports:
+      - 9000:9000
+    volumes:
+      - ./data:/data
+      - ./config:/root/.minio
+    environment:
+      - MINIO_DOMAIN=byt-minio
+      - MINIO_ACCESS_KEY=liyang
+      - MINIO_SECRET_KEY=liyang
+
+  byt-register:
+    build:
+      context: ./
+      dockerfile: ./byt-register/Dockerfile
+    restart: always
+    container_name: byt-register
+    image: byt-register
+    ports:
+      - 8848:8848
+
+  byt-gateway:
+    build:
+      context: ./
+      dockerfile: ./byt-gateway/Dockerfile
+    restart: always
+    container_name: byt-gateway
+    image: byt-gateway
+    ports:
+      - 9999:9999
+
+  byt-auth:
+    build:
+      context: ./
+      dockerfile: ./byt-auth/Dockerfile
+    restart: always
+    container_name: byt-auth
+    image: byt-auth
+
+  byt-upms:
+    build:
+      context: ./
+      dockerfile: ./byt-upms/byt-upms-biz/Dockerfile
+    restart: always
+    container_name: byt-upms
+    image: byt-upms
+
+  byt-monitor:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-monitor/Dockerfile
+    restart: always
+    image: byt-monitor
+    container_name: byt-monitor
+    ports:
+      - 5001:5001
+
+  byt-daemon-quartz:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-daemon-quartz/Dockerfile
+    restart: always
+    image: byt-daemon-quartz
+    container_name: byt-daemon-quartz
+
+  byt-daemon-elastic-job:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-daemon-elastic-job/Dockerfile
+    restart: always
+    image: byt-daemon-elastic-job
+    container_name: byt-daemon-elastic-job
+
+  byt-codegen:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-codegen/Dockerfile
+    restart: always
+    image: byt-codegen
+    container_name: byt-codegen
+
+  byt-mp-platform:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-mp-platform/Dockerfile
+    restart: always
+    image: byt-mp-platform
+    container_name: byt-mp-platform
+
+  byt-pay-platform:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-pay-platform/Dockerfile
+    restart: always
+    image: byt-pay-platform
+    container_name: byt-pay-platform
+
+  byt-oa-platform:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-oa-platform/Dockerfile
+    restart: always
+    image: byt-oa-platform
+    container_name: byt-oa-platform
+
+  byt-tx-manager:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-tx-manager/Dockerfile
+    restart: always
+    image: byt-tx-manager
+    container_name: byt-tx-manager
+    ports:
+      - 5004:5004
+      - 9998:9998
+
+  byt-sentinel:
+    build:
+      context: ./
+      dockerfile: ./byt-visual/byt-sentinel-dashboard/Dockerfile
+    restart: always
+    image: byt-sentinel
+    container_name: byt-sentinel
+    ports:
+      - 5020:5020

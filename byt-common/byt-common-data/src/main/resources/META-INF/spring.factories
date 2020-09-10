@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.byt.common.data.cache.RedisTemplateConfig,\
+    com.byt.common.data.cache.RedisCacheManagerConfig,\
+    com.byt.common.data.cache.RedisCacheAutoConfiguration,\
+    com.byt.common.data.tenant.BytTenantConfigProperties,\
+    com.byt.common.data.tenant.TenantContextHolderFilter,\
+    com.byt.common.data.tenant.BytFeignTenantConfiguration,\
+    com.byt.common.data.mybatis.MybatisPlusConfig,\
+    com.byt.common.data.resolver.WebMvcConfig

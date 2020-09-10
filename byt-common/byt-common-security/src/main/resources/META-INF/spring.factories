@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.byt.common.security.component.GlobalExceptionHandlerResolver,\
+  com.byt.common.security.component.BytTokenEnhancer,\
+  com.byt.common.security.service.BytUserDetailsServiceImpl

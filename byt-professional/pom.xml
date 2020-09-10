@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>byt</artifactId>
+		<groupId>com.byt</groupId>
+		<version>3.6.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>byt-professional</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>byt-drafting</module>
+		<module>byt-deploy</module>
+		<module>byt-dw</module>
+		<module>byt-dcs</module>
+		<module>byt-operation</module>
+		<module>byt-trend</module>
+		<module>byt-export</module>
+	</modules>
+
+	<dependencies>
+		<!--upms api、model 模块-->
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-upms-api</artifactId>
+		</dependency>
+		<!--日志处理-->
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-common-log</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-common-data</artifactId>
+		</dependency>
+		<!--swagger-->
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-common-swagger</artifactId>
+		</dependency>
+		<!--文件系统-->
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-common-minio</artifactId>
+		</dependency>
+		<!--注册中心客户端-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
+		<!--配置中心客户端-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		</dependency>
+		<!--spring security 、oauth、jwt依赖-->
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-common-security</artifactId>
+		</dependency>
+		<!--支持动态路由配置 -->
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-common-gateway</artifactId>
+		</dependency>
+		<!--sentinel 依赖-->
+		<dependency>
+			<groupId>com.byt</groupId>
+			<artifactId>byt-common-sentinel</artifactId>
+		</dependency>
+		<!--mybatis-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+		</dependency>
+		<!-- druid 连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+		</dependency>
+		<!--数据库-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!--web 模块-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!--undertow容器-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
