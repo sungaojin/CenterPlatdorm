@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纯适 - 高端猫鲜食</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 导航样式 */
+        .brand {
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: normal;
+        }
+        
+        .brand-en {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        nav a {
+            margin: 0 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        /* 横幅区域 */
+        .hero {
+            position: relative;
+            height: 400px;
+            background-color: #000;
+            overflow: hidden;
+        }
+        
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            color: white;
+            text-align: right;
+        }
+        
+        .hero-title {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        /* 分类标题 */
+        .section-title {
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+        
+        .title-en {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        
+        .title-cn {
+            font-size: 16px;
+            color: #555;
+        }
+        
+        /* 产品展示 */
+        .showcase {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+        
+        .showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* 产品列表 */
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0 80px;
+        }
+        
+        .product {
+            text-align: center;
+            width: 250px;
+        }
+        
+        .product-img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .product-name {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .product .btn {
+            color: #333;
+            background-color: transparent;
+            border: 1px solid #ccc;
+            font-size: 12px;
+            padding: 5px 15px;
+        }
+        
+        /* 故事部分 */
+        .story-header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .store-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            margin-bottom: 40px;
+        }
+        
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        .story-content p {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+            }
+            
+            .product-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .product {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 品牌和导航 -->
+    <header>
+        <div class="brand">
+            <h1 class="brand-name">纯适</h1>
+            <div class="brand-en">CHUNSHI</div>
+        </div>
+        
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">全部产品</a>
+            <a href="#">猫湿粮</a>
+            <a href="#">犬湿粮</a>
+            <a href="#">会员VIP</a>
+            <a href="#">品牌故事</a>
+        </nav>
+    </header>
+    
+    <!-- 横幅区域 -->
+	<section class="hero">
+    <a href="https://www.baidu.com">
+        <img src="http://www.chunshichongwu.com/upload/img/20251015093637.jpg" alt="鲜鸡磷虾鱼子酱盏" class="hero-img">
+    </a>
+    </section>
+    
+    <!-- 产品分类标题 -->
+    <section class="section-title">
+        <h2 class="title-en">Eastern Cuisine Classics Cat Fresh Meals</h2>
+        <p class="title-cn">东方膳典系列猫鲜食</p>
+    </section>
+    
+    <!-- 产品展示 -->
+	<section class="hero">
+        <img src="http://www.chunshichongwu.com/upload/img/20251016164400.jpg" alt="猫鲜食展示" class="hero-img">
+
+    </section>
+    
+    <!-- 产品列表 -->
+    <div class="product-list">
+        <div class="product">
+            <img src="http://www.chunshichongwu.com/upload/img/20251016164954.jpg" alt="美" class="product-img">
+            <h3 class="product-name">美 | BEAUTY</h3>
+            <p class="product-price">¥279 | 500g</p>
+            <a href="#" class="btn">点击探索</a>
+        </div>
+        
+        <div class="product">
+            <img src="http://www.chunshichongwu.com/upload/img/20251016165033.jpg" alt="暖" class="product-img">
+            <h3 class="product-name">暖 | WARM</h3>
+            <p class="product-price">¥279 | 500g</p>
+            <a href="#" class="btn">点击探索</a>
+        </div>
+        
+        <div class="product">
+            <img src="http://www.chunshichongwu.com/upload/img/20251016165010.jpg" alt="护" class="product-img">
+            <h3 class="product-name">护 | PROTECT</h3>
+            <p class="product-price">¥279 | 500g</p>
+            <a href="#" class="btn">点击探索</a>
+        </div>
+    </div>
+    
+    <!-- 品牌故事 -->
+    <section class="story">
+        <div class="section-title">
+            <h2 class="title-en">Our Story</h2>
+            <p class="title-cn">品牌故事</p>
+        </div>
+        
+        <img src="http://www.chunshichongwu.com/upload/img/20251016165451.jpg" alt="纯适店铺" class="store-img">
+        
+        <div class="story-content">
+            <p>Through the cooking smoke along the Bian River's grain transport route, we glimpse fragments from The Eastern Capital: A Dream of Splendor – the female official of the Imperial Food Bureau who steamed Exquisite Peony Fish Fresh meals. She could never foresee that her umami-preserving technique with cedarwood steamers would be compatible with another later</p>
+            
+            <p>在汴河漕运的炊烟袅袅中，我们瞥见了《东京梦华录》的片段——那位在掌食局的女官凭借「在每道菜里都要给皇上一个惊喜」的厨艺信条，创制了让皇帝都赞不绝口的「珍馐美馔」。她绝不会想到，她用香杉木蒸笼保鲜的手艺，竟能与另一种烹制手法相得益彰。</p>
+            
+            <p>成就菜色口味层次，又开创了崭新的烹制手法，烧制手法，制成美味。不敢轻易让大人们吃到，高档食材用心制作，给宠物们准备了一份上好的营养餐。成就食材本味的同时还原了食物的温暖属性，又创制了全新的制作手法，给宠物朋友，给宠爱的家人一个美好开始。高档食材妙手制作，营养价值保留到最大，给宠物朋友，给珍爱的家人之间。</p>
+        </div>
+    </section>
+</body>
+</html>
